@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+    <string name="empty_list">Nu există elemente pe listă..</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="color">Szín:</string>
+    <string name="brown">Barna</string>
+    <string name="white">Fehér</string>
+    <string name="sugar">Cukor</string>
+    <string name="flour">Liszt</string>
+    <string name="oil">Olaj</string>
+    <string name="buttocks">Farhát</string>
+    <string name="milk">UHT Tej 2.8%</string>
+</resources>
