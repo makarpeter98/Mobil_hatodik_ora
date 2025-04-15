@@ -1,5 +1,6 @@
 package hu.unideb.inf.mobilsz12.shoppinglist;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,12 +18,14 @@ import android.widget.RadioGroup;
  */
 public class ColorFragment extends Fragment {
     static String colorString = "";
+
     public ColorFragment() {
         colorString = "";
     }
 
     public static ColorFragment newInstance() {
-        return null;
+        ColorFragment fragment = new ColorFragment();
+        return fragment;
     }
 
     @Override
@@ -32,6 +35,12 @@ public class ColorFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return null;
+        View rootView = inflater.inflate(R.layout.fragment_color, container, false);
+        RadioGroup radioGroup = rootView.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener((rg, i) -> {
+            RadioButton radioButton = rg.findViewById(i);
+            colorString = radioButton.getText().toString();
+        });
+        return rootView;
     }
 }
