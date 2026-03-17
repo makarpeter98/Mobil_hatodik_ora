@@ -12,4 +12,6 @@
     <string name="milk">UHT Tej 2.8%</string>
     <string name="Color">Color</string>
     <string name="apple">alma</string>
+    <string name="red">piros</string>
+    <string name="green">zöld</string>
 </resources>
