@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ItemsActivity extends AppCompatActivity {
-
+    // Teszt
     public static final String ITEM_KEY = "hu.unideb.inf.mobilsz12.shoppinglist.ItemsActivity.ITEM_KEY_fhgfdhvchfhzfjjfujfjhg";
 
     @Override
