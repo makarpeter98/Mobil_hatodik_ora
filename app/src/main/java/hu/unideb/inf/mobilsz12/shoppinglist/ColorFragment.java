@@ -7,16 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ColorFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ColorFragment extends Fragment {
 
+    static String colorString = "";
+
     public ColorFragment() {
-        // Required empty public constructor
+        colorString = "";
     }
 
     public static ColorFragment newInstance() {
@@ -32,7 +31,13 @@ public class ColorFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_color, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_color, container, false);
+        RadioGroup radioGroup = rootView.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener((rg, i) ->
+        {
+            RadioButton radioButton = rg.findViewById(i);
+            colorString = radioButton.getText().toString();
+        });
+        return rootView;
     }
 }
