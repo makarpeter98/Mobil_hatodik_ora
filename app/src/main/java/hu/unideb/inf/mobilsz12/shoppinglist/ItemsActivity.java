@@ -12,6 +12,7 @@ import android.widget.Button;
 
 public class ItemsActivity extends AppCompatActivity {
     // Teszt
+    private boolean isColorFragmentVisible = false;
     public static final String ITEM_KEY = "hu.unideb.inf.mobilsz12.shoppinglist.ItemsActivity.ITEM_KEY_fhgfdhvchfhzfjjfujfjhg";
 
     @Override
@@ -27,11 +28,35 @@ public class ItemsActivity extends AppCompatActivity {
         String buttonString = ((Button) view).getText().toString();
         String sugarString = getString(R.string.sugar);
 
-        replyIntent.putExtra(ITEM_KEY, buttonString);
+        if (buttonString.equals(sugarString))
+        {
+            if(isColorFragmentVisible)
+            {
+                replyIntent.putExtra(ITEM_KEY, buttonString + " " + ColorFragment.colorString);
+            }
+            else
+            {
+                displayColorFragment();
+                isColorFragmentVisible = true;
+                return;
+            }
+        }
+        else
+        {
+            replyIntent.putExtra(ITEM_KEY, buttonString);
+        }
 
         setResult(RESULT_OK, replyIntent);
         finish();
     }
 
+    public void displayColorFragment()
+    {
+        ColorFragment colorFragment = ColorFragment.newInstance();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container, colorFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
 
 }
